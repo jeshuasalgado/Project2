@@ -1,0 +1,19 @@
+.login-form {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.jumbotron {
+  text-align: center;
+  font-style: italic;
+  font-size: large;
+}
+
+.login-button {
+  padding-top: 15px;
+  padding-right: 28px;
+
+  font-size: 15px;
+  font-weight: bold;
+}
