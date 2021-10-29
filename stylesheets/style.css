@@ -1,3 +1,7 @@
+* {
+  background-color: lightgoldenrodyellow;
+}
+
 .login-form {
   text-align: center;
   font-size: 24px;
@@ -7,7 +11,8 @@
 .jumbotron {
   text-align: center;
   font-style: italic;
-  font-size: large;
+  font-size: 35px;
+  text-decoration: none;
 }
 
 .login-button {
@@ -16,4 +21,69 @@
 
   font-size: 15px;
   font-weight: bold;
+}
+
+.add-recipe-form {
+  width: 300px;
+  margin: 0 auto;
+
+  padding-top: 50px;
+}
+
+.recipe-body {
+  padding-right: 150px;
+  padding-bottom: 110px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: white;
+}
+
+.btn {
+  padding: 8px;
+  background-color: lightblue;
+  color: black;
+  border-radius: 4px;
+  box-shadow: 1px 1px darkgray;
+}
+
+.recipe-name {
+  font-size: 18px;
+  background-color: white;
+}
+
+.password {
+  margin: 2px;
+}
+
+#username-login {
+  height: 25px;
+  background-color: white;
+  font-size: 18px;
+}
+
+#password-login {
+  height: 25px;
+  background-color: white;
+  font-size: 18px;
+}
+
+#login-btn {
+  width: 75px;
+  margin-right: 15px;
+}
+
+#recipe-header {
+  text-align: center;
+
+  font-size: 36px;
+}
+
+.recipe-title {
+  font-weight: bold !important;
+  text-decoration: underline !important;
+}
+
+.ingredients {
+  font-style: italic !important;
+  font-size: 18px;
 }
