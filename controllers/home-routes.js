@@ -10,6 +10,16 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+router.get('/logout', (req, res) => {
+    if(req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        })
+    } else {
+        res.status(404).end();
+    }
+})
+
 router.get('/', (req, res) => {
     Recipe.findAll({
         attributes: [
@@ -30,4 +40,14 @@ router.get('/', (req, res) => {
             }
         ]
     })
-})
+    .then(dbPostData => {
+        const recipes = dbPostData.map(recipe => recipe.post({ plain: true }));
+        res.render('homepage', recipes);
+    })
+    .cath(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
+
+module.exports = router;
