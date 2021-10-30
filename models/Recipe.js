@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+
 // create our Post model
 class Recipe extends Model {
-  static upvote(body, models) {
+  static buildrecipe(body, models) {
     return models.Steps.create({
       user_id: body.user_id,
       recipe_id: body.recipe_id
@@ -19,13 +20,15 @@ class Recipe extends Model {
         include: [
           {
             model: models.Ingredients,
-            attributes: ['id', 'ingredient_text', 'recipe_id'],
-            // include: {
-            //   model: models.User,
-            //   attributes: ['username']
-            // }
+            attributes: ['id', 'ingredient_text', 'recipe_id']
           }
-        ]
+        ],
+        include: [
+            {
+              model: models.Steps,
+              attributes: ['id', 'steps_text', 'recipe_id']
+            }
+          ]
       });
     });
   }
