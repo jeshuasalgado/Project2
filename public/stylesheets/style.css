@@ -1,5 +1,5 @@
 * {
-  background-color: lightgoldenrodyellow;
+  background-color: whitesmoke;
 }
 
 .login-form {
@@ -39,15 +39,14 @@
 }
 
 .btn {
-  padding: 8px;
-  background-color: lightblue;
+  background-color: rgb(66, 197, 241);
   color: black;
   border-radius: 4px;
   box-shadow: 1px 1px darkgray;
 }
 
 .recipe-name {
-  font-size: 18px;
+  font-size: 36px;
   background-color: white;
 }
 
@@ -96,7 +95,7 @@
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #467ec3;
+  color: black;
   font-size: 100%;
   font-weight: bold;
   transition: color 0.1s;
@@ -104,8 +103,12 @@
 }
 
 nav {
-  background-color: lightgray;
+  background-color: darkgray;
   text-align: right;
   padding-right: 50px;
   font-size: 25px;
+}
+
+#submit-recipe {
+  margin-top: 15px;
 }
