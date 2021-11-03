@@ -3,27 +3,27 @@ const { Recipe } = require('../models');
 const recipedata = [
   {
     title: 'Cheeseburger.',
-    post_url: 'https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png',
+    post_url: 'https://www.foodrepublic.com/recipes/all-american-cheeseburger-recipe/',
     steps_id: 1
   },
   {
-    title: 'Morbi non quam nec dui luctus rutrum.',
-    post_url: 'https://nasa.gov/donec.json',
+    title: 'Pancakes',
+    post_url: 'https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/',
     steps_id: 2
   },
   {
-    title: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
-    post_url: 'https://europa.eu/parturient/montes/nascetur/ridiculus/mus/etiam/vel.aspx',
+    title: 'Spicy Chili',
+    post_url: 'https://tastesbetterfromscratch.com/spicy-chili/',
     steps_id: 3
   },
   {
-    title: 'Nunc purus.',
-    post_url: 'http://desdev.cn/enim/blandit/mi.jpg',
+    title: 'Awesome Grilled Cheese',
+    post_url: 'https://www.bonappetit.com/recipe/best-ever-grilled-cheese',
     steps_id: 4
   },
   {
-    title: 'Pellentesque eget nunc.',
-    post_url: 'http://google.ca/nam/nulla/integer.aspx',
+    title: 'Chef Salad',
+    post_url: 'https://www.foodnetwork.com/recipes/food-network-kitchen/chefs-salad-recipe-2011625',
     steps_id: 5
   }
 ];
