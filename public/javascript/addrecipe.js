@@ -54,22 +54,22 @@ async function newRecipeHandler(event) {
   });
   console.log(ingredientList);
 
-  // const response = await fetch("api/recipes", {
-  //   method: "POST",
-  //   body: JSON.stringify({
-  //     name,
-  //     ingredientList,
-  //   }),
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // });
+  const response = await fetch("api/recipes", {
+    method: "POST",
+    body: JSON.stringify({
+      name,
+      ingredientList,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-  // if (response.ok) {
-  //   document.location.replace("/homepage");
-  // } else {
-  //   alert(response.statusText);
-  // }
+  if (response.ok) {
+    document.location.replace("/homepage");
+  } else {
+    alert(response.statusText);
+  }
 }
 
 document
@@ -91,7 +91,3 @@ var testBtn = document.querySelector("#add-ingredient-btn");
 console.log(testBtn);
 
 testBtn.addEventListener("click", addIngredient);
-
-// document
-//   .querySelector("#add-ingredient-btn")
-//   .addEventListener("submit", addIngredient);
