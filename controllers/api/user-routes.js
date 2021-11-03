@@ -1,5 +1,5 @@
 const router = require('express').Router();
-//inport models when they are complete
+//import models when they are complete
 
 //GET /api/users/:id
 
