@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-// place holder for when models get setup-const {} = require('../models');
+const { Ingredients, Recipe, Steps } = require('../models');
 
 router.get('/login', (req, res) => {
     if(req.session.loggedIn) {
@@ -40,9 +40,9 @@ router.get('/', (req, res) => {
             }
         ]
     })
-    .then(dbPostData => {
-        const recipes = dbPostData.map(recipe => recipe.post({ plain: true }));
-        res.render('homepage', recipes);
+    .then(dbData => {
+        const recipes = dbData.map(recipe => recipe.get({ plain: true }));
+        res.render('login');
     })
     .cath(err => {
         console.log(err);
