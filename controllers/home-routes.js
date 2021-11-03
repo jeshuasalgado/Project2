@@ -22,21 +22,21 @@ router.get("/logout", (req, res) => {
 
 router.get("/", (req, res) => {
   Recipe.findAll({
-    attributes: ["id", "name", "picture", "ingredients_id", "steps_id"],
+    attributes: ["id", "title", "recipe_url", "user_id"],
     include: [
       {
         model: Ingredients,
-        attributes: ["name", "amount"],
+        attributes: ["ingredients_text", "recipe_id"],
       },
       {
         model: Steps,
-        attributes: ["whatever is needed"],
+        attributes: ["id", 'recipe_id'],
       },
     ],
   })
     .then((dbData) => {
       const recipes = dbData.map((recipe) => recipe.get({ plain: true }));
-      res.render("login");
+      res.render("addrecipe");
     })
     .catch((err) => {
       console.log(err);
