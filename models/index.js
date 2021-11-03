@@ -14,23 +14,10 @@ Recipe.belongsTo(User, {
   onDelete: 'SET NULL'
 });
 
-User.belongsToMany(Recipe, {
-  through: Steps,
-  as: 'steps_recipes',
-
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});
-
 Recipe.belongsToMany(User, {
   through: Steps,
   as: 'steps_recipes',
   foreignKey: 'recipe_id',
-  onDelete: 'SET NULL'
-});
-
-Steps.belongsTo(User, {
-  foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
 
@@ -39,26 +26,13 @@ Steps.belongsTo(Recipe, {
   onDelete: 'SET NULL'
 });
 
-User.hasMany(Steps, {
-  foreignKey: 'user_id'
-});
 
 Recipe.hasMany(Steps, {
   foreignKey: 'recipe_id'
 });
 
-Ingredients.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});
-
 Ingredients.belongsTo(Recipe, {
   foreignKey: 'recipe_id',
-  onDelete: 'SET NULL'
-});
-
-User.hasMany(Ingredients, {
-  foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
 
