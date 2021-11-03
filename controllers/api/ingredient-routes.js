@@ -4,11 +4,11 @@ const { Recipes, Ingredients, Steps} = require('../../models');
 //get all ingredients on hand
 router.get('/', (req, res) => {
     Ingredients.findAll({
-        order: [['name', 'DESC']],
+        order: [['ingredients_text', 'DESC']],
         attribute: [
             'id',
-            'name',
-            'amount'
+            'ingredients_text',
+            'recipe_id'
         ]
     })
     .then(dbData => res.json(dbData))

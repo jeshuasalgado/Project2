@@ -6,18 +6,17 @@ router.get('/', (req, res) => {
     Recipes.findAll({
         attributes: [
             'id',
-            'name',
-            'ingredient_id',
-            'steps_id'
+            'title',
+            'recipe_url'
         ],
         include: [
             {
                 model: Ingredients,
-                attributes: ['id', 'name', 'amount']
+                attributes: ['id', 'ingredients_text']
             }
         ]
     })
-    .then(dbPostData = res.json(dbPostData))
+    .then(dbRecipeData = res.json(dbRecipeData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
