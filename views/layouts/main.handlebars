@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Riley's Kitchen</title>
+  </head>
+
+  <header class="jumbotron">
+    <h1>
+      <a href="/homepage.handlebars">Riley's Kitchen</a>
+    </h1>
+    <nav>
+      {{#if loggedIn}}
+        <a href="/homepage"></a>
+        <button id="recipe-nav" class="btn-nav">Recipes</button>
+        <button id="logout-nav" class="btn-nav">logout</button>
+      {{else}}
+        <a href="/login">login</a>
+      {{/if}}
+    </nav>
+
+  </header>
+  <body>
+
+    <main>
+      {{body}}
+    </main>
+
+  </body>
+</html>
+
+<script> src= "/javascript/main.handlebars"</script>
