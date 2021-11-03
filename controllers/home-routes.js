@@ -24,27 +24,25 @@ router.get('/', (req, res) => {
     Recipe.findAll({
         attributes: [
             'id',
-            'name',
-            'picture',
-            'ingredients_id',
-            'steps_id'
+            'title',
+            'recipe_url'
         ], 
         include: [
             {
                 model: Ingredients,
-                attributes: ['name', 'amount']
+                attributes: ['ingredients_text', 'recipe_id']
             },
             {
                 model: Steps,
-                attributes: ['whatever is needed']
+                attributes: ['recipe_id']
             }
         ]
     })
     .then(dbData => {
         const recipes = dbData.map(recipe => recipe.get({ plain: true }));
-        res.render('login');
+        res.render('addrecipe');
     })
-    .cath(err => {
+    .catch(err => {
         console.log(err);
         res.status(500).json(err);
     })
