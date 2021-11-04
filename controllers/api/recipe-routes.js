@@ -1,9 +1,9 @@
 const router = require('express').Router();
 //import models when completed
-const { Recipes, Ingredients, Steps} = require('../../models');
+const { Recipe, Ingredients, Steps} = require('../../models');
 
 router.get('/', (req, res) => {
-    Recipes.findAll({
+    Recipe.findAll({
         attributes: [
             'id',
             'title',
@@ -22,5 +22,17 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     })
 });
+
+router.post('/', (req, res) => {
+    Recipes.create({
+        title: req.body.name,
+        ingredients: req.body.ingredientList
+    })
+    .then(dbRecipeData = res.json(dbRecipeData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+})
 
 module.exports = router;
