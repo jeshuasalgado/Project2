@@ -34,7 +34,6 @@ class Recipe extends Model {
   }
 }
 
-
 Recipe.init(
   {
     id: {
@@ -47,13 +46,10 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    recipe_url: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isURL: true
-      },      
-    },
+    ingredient_list: {
+      type: DataTypes.JSON,
+      allowNull: true
+    },      
     user_id: {
       type: DataTypes.INTEGER,
       references: {
