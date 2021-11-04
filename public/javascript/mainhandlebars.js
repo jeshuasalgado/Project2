@@ -6,11 +6,13 @@ async function loginHandler(event) {
 async function logoutHandler(event) {
   event.preventDefault();
   console.log('logout button hit');
+  document.location.replace('/logout')
 }
 
 async function newRecipeHandler(event) {
   event.preventDefault();
   console.log('new recipe button hit');
+  document.location.replace('/addrecipe')
 }
  
 document.querySelector('#login-nav').addEventListener('click', loginHandler);
