@@ -1,6 +1,6 @@
 const router = require('express').Router();
 //import models when completed
-const { Recipe, Ingredients, Steps} = require('../../models');
+const { Recipe } = require('../../models');
 
 router.get('/', (req, res) => {
     Recipe.findAll({
