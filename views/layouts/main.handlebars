@@ -16,13 +16,16 @@
       <a href="/homepage">Riley's Kitchen</a>
     </h1>
     <nav>
-
+      {{#if loggedIn}}
         <a href="/homepage"></a>
         <button id="recipe-nav" class="btn-nav">Add Recipe</button>
-        <button id="logout-nav" class="btn-nav">logout</button>
-
-        <a href="/login" id="login-nav">login</a>
-
+        <button id="logout-nav" class="btn-nav">Logout</button>
+      {{else}}
+        <button id="logout-nav" class="btn-nav"><a
+            href="/login"
+            id="login-nav"
+          >Login</a></button>
+      {{/if}}
     </nav>
 
   </header>

@@ -1,5 +1,5 @@
 * {
-  background-color: whitesmoke;
+  background-color: rgb(231, 230, 230);
 }
 
 .login-form {
@@ -59,20 +59,24 @@
   background-color: white;
   font-size: 18px;
   margin: auto 0;
+  border: none;
 }
 
-#email-login {
+#email-signup {
   height: 25px;
   background-color: white;
   font-size: 18px;
   margin-left: 25px;
   text-align: right;
+  border: none;
 }
 
 #password-login {
   height: 25px;
   background-color: white;
   font-size: 18px;
+  border: none;
+  width: 10.8%;
 }
 
 #username-signup {
@@ -80,11 +84,15 @@
   background-color: white;
   font-size: 18px;
   margin: auto 0;
+  border: none;
 }
 #password-signup {
   height: 25px;
   background-color: white;
   font-size: 18px;
+  width: 10.8%;
+  border-radius: 1px;
+  border: none;
 }
 
 #email-signup {
