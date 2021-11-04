@@ -58,6 +58,15 @@
   height: 25px;
   background-color: white;
   font-size: 18px;
+  margin: auto 0;
+}
+
+#email-login {
+  height: 25px;
+  background-color: white;
+  font-size: 18px;
+  margin-left: 25px;
+  text-align: right;
 }
 
 #password-login {
@@ -66,9 +75,33 @@
   font-size: 18px;
 }
 
+#username-signup {
+  height: 25px;
+  background-color: white;
+  font-size: 18px;
+  margin: auto 0;
+}
+#password-signup {
+  height: 25px;
+  background-color: white;
+  font-size: 18px;
+}
+
+#email-signup {
+  height: 25px;
+  background-color: white;
+  font-size: 18px;
+  margin-left: 25px;
+  text-align: right;
+}
+
+#signup-btn {
+  margin-left: 32px;
+}
+
 #login-btn {
   width: 75px;
-  margin-right: 15px;
+  margin-right: 45px;
 }
 
 #recipe-header {
@@ -111,4 +144,13 @@ nav {
 
 #submit-recipe {
   margin-top: 15px;
+}
+
+#login-title {
+  margin-right: 90px;
+}
+
+#new-account-login {
+  margin-left: 55px;
+  margin-top: 75px;
 }

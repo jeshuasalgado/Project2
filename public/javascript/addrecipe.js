@@ -41,6 +41,7 @@
 async function newRecipeHandler(event) {
   event.preventDefault();
 
+  //gets name of recipe from user input
   const name = document.querySelector('input[name="recipe-name"]').value;
   console.log(name);
 
@@ -48,7 +49,8 @@ async function newRecipeHandler(event) {
   console.log(ingredients);
 
   const ingredientArr = Array.from(ingredients);
-  console.log(ingredientArr);
+
+  // ingredientList is array of ingredients entered by user
   const ingredientList = ingredientArr.map((input) => {
     return input.value;
   });
