@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    console.log('got to post');
     User.create({
         username: req.body.username,
         email: req.body.email,

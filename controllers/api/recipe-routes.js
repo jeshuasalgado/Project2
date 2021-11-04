@@ -7,16 +7,16 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'title',
-            'recipe_url'
+            'ingredient_list'
         ],
-        include: [
-            {
-                model: Ingredients,
-                attributes: ['id', 'ingredients_text']
-            }
-        ]
     })
-    .then(dbRecipeData = res.json(dbRecipeData))
+    .then(dbRecipeData => {
+        if(!dbRecipeData) {
+            res.status(404).json({message: 'no recipes in db'});
+            return;
+        }
+        res.json(dbRecipeData);
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -24,11 +24,14 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    Recipes.create({
+    Recipe.create({
         title: req.body.name,
-        ingredients: req.body.ingredientList
+        ingredient_list: req.body.ingredientList
     })
-    .then(dbRecipeData = res.json(dbRecipeData))
+    .then(dbRecipeData => {
+        console.log(dbRecipeData.title, dbRecipeData.ingredient_list)
+        res.json(dbRecipeData)
+    } )
     .catch(err => {
         console.log(err);
         res.status(500).json(err);

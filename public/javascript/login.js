@@ -38,9 +38,10 @@ async function signupFormHandler(event) {
 
   // add correct file path for method:; and new api code or file path
   if (username && email && password) {
-    const response = await fetch("/api/", {
-      method: "post",
+    const response = await fetch("/api/users", {
+      method: "POST",
       body: JSON.stringify({
+        email,
         username,
         password,
       }),
@@ -50,7 +51,8 @@ async function signupFormHandler(event) {
     //add correct api path file (), if response needs correct api file
 
     if (response.ok) {
-      document.location.replace();
+      console.log('response was ok')
+      document.location.replace('/homepage/');
     } else {
       alert(response.statusText);
     }

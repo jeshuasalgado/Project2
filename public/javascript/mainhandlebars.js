@@ -1,28 +1,18 @@
-//alogin is the function name 
-alogin function newFormHandler(event) {
+async function loginHandler(event) {
     event.preventDefault();
-  
-    const post_url = document.querySelector('input[name="post-url"]').value;
-  //add api response after we get the api key
-    const response = await fetch(`/api/ {
-      body: JSON.stringify({
-        title,
-        post_url
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
- //add api 
+    document.location.replace('/login')
+}
 
-    if (response.ok) {
-      document.location.replace('/');
-    } 
-    
-    else {
-      alert(response.statusText);
-    }
-  }
-  //add or remove after merging just in case for the btn 
+async function logoutHandler(event) {
+  event.preventDefault();
+  console.log('logout button hit');
+}
+
+async function newRecipeHandler(event) {
+  event.preventDefault();
+  console.log('new recipe button hit');
+}
  
-  document.querySelector('login-btn').addEventListener('submit', newFormHandler);
+document.querySelector('#login-nav').addEventListener('click', loginHandler);
+document.querySelector('#logout-nav').addEventListener('click', logoutHandler);
+document.querySelector('#recipe-nav').addEventListener('click', newRecipeHandler);
