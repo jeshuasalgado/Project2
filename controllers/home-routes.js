@@ -10,27 +10,10 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get('/homepage', (req, res) => {
-    if(!req.session.loggedIn) {
-        res.render('login');
-    } else {
-        res.render('homepage');
-    }
-});
-
-router.get('/addrecipe', (req, res) => {
-    if(!req.session.loggedIn) {
-        res.render('login');
-    } else {
-        res.render('addrecipe')
-    }
-})
-
 router.get("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
-      res.render('homepage');
     });
   } else {
     res.status(404).end();
@@ -43,10 +26,7 @@ router.get("/", (req, res) => {
   })
     .then((dbData) => {
       const recipes = dbData.map((recipe) => recipe.get({ plain: true }));
-
       res.render("homepage", { recipes, loggedIn: true });
-
-
     })
     .catch((err) => {
       console.log(err);
