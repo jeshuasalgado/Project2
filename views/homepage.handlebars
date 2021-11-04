@@ -18,8 +18,28 @@
         <div>
         
             <div class="row">
-                
+
+                {{#each recipes}}
                 <div class="col s12 m3 l4">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content">
+                      <span class="card-title recipe-title">{{title}}</span>
+                      <div class="ingredients">
+                        {{#each ingredient_list as |data|}}
+                      <p>{{data}}</p>
+                      {{/each}}
+                    </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                {{/each}}
+
+
+
+
+                
+                {{!-- <div class="col s12 m3 l4">
                   <div class="card blue-grey darken-1">
                     <div class="card-content">
                       <span class="card-title recipe-title">Recipe Name</span>
@@ -63,11 +83,11 @@
                   </div>
                 </div>
                 
-            </div>
+                  </div> --}}
             
-                
+              </div>
            </div>
-           
+</main>
               
             
         

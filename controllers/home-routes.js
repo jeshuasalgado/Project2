@@ -43,7 +43,10 @@ router.get("/", (req, res) => {
   })
     .then((dbData) => {
       const recipes = dbData.map((recipe) => recipe.get({ plain: true }));
-      res.render("homepage");
+
+      res.render("homepage", { recipes, loggedIn: true });
+
+
     })
     .catch((err) => {
       console.log(err);
