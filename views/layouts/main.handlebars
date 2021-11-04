@@ -13,16 +13,16 @@
 
   <header class="jumbotron">
     <h1>
-      <a href="/homepage.handlebars">Riley's Kitchen</a>
+      <a href="/homepage">Riley's Kitchen</a>
     </h1>
     <nav>
-      {{#if loggedIn}}
+
         <a href="/homepage"></a>
         <button id="recipe-nav" class="btn-nav">Add Recipe</button>
         <button id="logout-nav" class="btn-nav">logout</button>
-      {{else}}
+
         <a href="/login" id="login-nav">login</a>
-      {{/if}}
+
     </nav>
 
   </header>
