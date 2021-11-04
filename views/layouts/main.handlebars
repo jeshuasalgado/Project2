@@ -18,10 +18,10 @@
     <nav>
       {{#if loggedIn}}
         <a href="/homepage"></a>
-        <button id="recipe-nav" class="btn-nav">Recipes</button>
+        <button id="recipe-nav" class="btn-nav">Add Recipe</button>
         <button id="logout-nav" class="btn-nav">logout</button>
       {{else}}
-        <a href="/login">login</a>
+        <a href="/login" id="login-nav">login</a>
       {{/if}}
     </nav>
 
@@ -31,6 +31,11 @@
     <main>
       {{{body}}}
     </main>
+<<<<<<< HEAD
     <script src="/javascript/mainhandlebars.js"> </script>
+=======
+
+    <script src="/javascript/mainhandlebars.js"></script>
+>>>>>>> main
   </body>
 </html>

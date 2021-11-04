@@ -22,17 +22,7 @@ router.get("/logout", (req, res) => {
 
 router.get("/", (req, res) => {
   Recipe.findAll({
-    attributes: ["id", "title", "recipe_url", "user_id"],
-    include: [
-      {
-        model: Ingredients,
-        attributes: ["ingredients_text", "recipe_id"],
-      },
-      {
-        model: Steps,
-        attributes: ["id", 'recipe_id'],
-      },
-    ],
+    attributes: ["id", "title", "ingredient_list", "user_id"],
   })
     .then((dbData) => {
       const recipes = dbData.map((recipe) => recipe.get({ plain: true }));
