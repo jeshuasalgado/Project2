@@ -31,7 +31,7 @@
   No Licenses.
 
   # Contributors
-  Myself
+  Colton Bloomquist, Riley Smith, Cory Salisbury, Jesh Selgado.
 
   # Tests
   None
