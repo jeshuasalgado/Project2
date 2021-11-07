@@ -10,6 +10,7 @@ async function loginFormHandler(event) {
 
   //add api key
   if (username && password) {
+    console.log('got a username and password')
     const response = await fetch("/api/users/login", {
       method: "post",
       body: JSON.stringify({
@@ -20,6 +21,7 @@ async function loginFormHandler(event) {
     });
     // add correct path file, i need to add file name in: document.location.replace()
     if (response.ok) {
+      console.log('response was ok')
       document.location.replace("/homepage");
     } else {
       alert(response.statusText);

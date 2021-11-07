@@ -39,8 +39,9 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
+    console.log('got to login')
     User.findOne({
-        where: {email: req.body.email}
+        where: {username: req.body.username}
     })
     .then(dbUserData => {
         if(!dbUserData) {
